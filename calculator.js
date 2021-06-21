@@ -7,14 +7,20 @@ let loanYears;
 /** Retrieves current form values and returns {amount, years, rate}. */
 
 function getFormValues() {
-	principle = document.getElementById("loan-amount").value;
-	interest = document.getElementById("loan-rate").value;
-	loanYears = document.getElementById("loan-years").value;
+	principle = Number(document.getElementById("loan-amount").value);
+	interest = Number(document.getElementById("loan-rate").value);
+	loanYears = Number(document.getElementById("loan-years").value);
 }
 
 /** Calculate monthly payment and return. */
 
 function calcMonthlyPayment(amount, years, rate) {
+  let monthlyInterest = rate / 12;
+  let loanMonths = years * 12;
+  let divisor =  1 - Math.pow( (1 + monthlyInterest), -loanMonths)
+  let numerator = (amount * monthlyInterest); 
+  let monthlyPayment =  numerator / divisor;
+  return monthlyPayment;
 }
 
 /** Get form values, calculate & update display. */
