@@ -1,9 +1,15 @@
 // So we only have to do this once, find these elements in DOM
 const calcForm = document.getElementById("calc-form");
+let principle;
+let interest;
+let loanYears;
 
 /** Retrieves current form values and returns {amount, years, rate}. */
 
 function getFormValues() {
+	principle = document.getElementById("loan-amount").value;
+	interest = document.getElementById("loan-rate").value;
+	loanYears = document.getElementById("loan-years").value;
 }
 
 /** Calculate monthly payment and return. */
