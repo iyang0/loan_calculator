@@ -1,5 +1,9 @@
 it('should calculate the monthly rate correctly', function () {
-  expect("a").toEqual("a")
+  // works with default
+  expect(calcMonthlyPayment(120, 1, 0.1)).toEqual(10.55)
 });
 
-console.log("it works!")
+it('should return a monthly rate of 0 if interest is 0',
+function () {
+  expect(calcMonthlyPayment(120, 1, 0)).toEqual(0)
+})

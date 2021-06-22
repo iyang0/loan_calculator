@@ -21,7 +21,7 @@ function calcMonthlyPayment(amount, years, rate) {
   let divisor =  1 - Math.pow( (1 + monthlyInterest), -loanMonths)
   let numerator = (amount * monthlyInterest); 
   let monthlyPayment =  numerator / divisor;
-  return monthlyPayment.toFixed(2);
+  return Number(monthlyPayment.toFixed(2));
 }
 
 /** Get form values, calculate & update display. */
