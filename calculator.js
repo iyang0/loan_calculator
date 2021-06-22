@@ -61,3 +61,12 @@ function start() {
 }
 
 window.addEventListener('DOMContentLoaded', start);
+
+
+
+/** TO-DO
+ * 1. Error handling on forms if there if input is NaN
+ * 2. Error for handling interest rate of 0 
+ * 3. Error for handling negative numbers 
+ * 4. Add test for edge cases
+*/
